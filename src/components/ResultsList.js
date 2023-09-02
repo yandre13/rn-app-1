@@ -7,9 +7,10 @@ import {
 } from 'react-native'
 import React from 'react'
 import ResultDetail from './ResultDetail'
-import { withNavigation } from 'react-navigation'
+import { useNavigation } from '@react-navigation/native'
 
-const ResultsList = ({ name = 'Header', results = [], navigation }) => {
+const ResultsList = ({ name = 'Header', results = [] }) => {
+  const navigation = useNavigation()
   if (!results?.length) {
     return null
   }
@@ -45,4 +46,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default withNavigation(ResultsList)
+export default ResultsList

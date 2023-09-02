@@ -9,8 +9,8 @@ import {
 import React, { useEffect, useState } from 'react'
 import { yelpApi } from '../api/yelp'
 
-const ResultDetailScreen = (props) => {
-  const id = props.navigation.getParam('id')
+const ResultDetailScreen = ({ route }) => {
+  const id = route.params.id
   const [result, setResult] = useState(null)
   const [errorMessage, setErrorMessage] = useState('')
   const getDetails = async (id) => {
